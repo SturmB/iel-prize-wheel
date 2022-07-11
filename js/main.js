@@ -1,7 +1,17 @@
 /* eslint-disable no-undef */
 
+const audio = new Audio("/js/vendor/javascript-winwheel-2.8.0/tick.mp3");
+
+const playSound = () => {
+  audio.pause();
+  audio.currentTime = 0;
+
+  audio.play();
+};
+
 const theWheel = new Winwheel({
   animation: {
+    callbackSound: playSound,
     duration: 5,
     soundTrigger: "pin",
     spins: 4,
@@ -73,6 +83,7 @@ const theWheel = new Winwheel({
   textOrientation: "vertical",
 });
 
+// eslint-disable-next-line no-unused-vars
 const spinTheWheel = () => {
   const spinButton = document.getElementById("spinButton");
   theWheel.rotationAngle = 9;
