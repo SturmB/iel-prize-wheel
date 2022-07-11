@@ -9,12 +9,15 @@
   "dependencies": {
     "@parcel/core": "^2.6.2",
     "@parcel/packager-raw-url": "^2.6.2",
+    "@parcel/transformer-postcss": "^2.6.2",
     "@parcel/transformer-webmanifest": "^2.6.2"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.7",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "parcel": "^2.6.2",
+    "postcss": "^8.4.14",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.1.5"
   },
