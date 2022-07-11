@@ -3,14 +3,8 @@ lockfileVersion: 5.4
 specifiers:
   eslint: ^8.19.0
   eslint-config-prettier: ^8.5.0
-  gsap: ^3.10.4
   prettier: ^2.7.1
   tailwindcss: ^3.1.5
-  winwheel: ^1.0.1
-
-dependencies:
-  gsap: 3.10.4
-  winwheel: 1.0.1
 
 devDependencies:
   eslint: 8.19.0
@@ -500,10 +494,6 @@ packages:
       type-fest: 0.20.2
     dev: true
 
-  /gsap/3.10.4:
-    resolution: {integrity: sha512-6QatdkKxXCMfvCW4rM++0RqyLQAzFX5nwl3yHS0XPgkZBkiSEY3VZVbMltrdtsbER/xZonLtyHt684wRp4erlQ==}
-    dev: false
-
   /has-flag/4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
@@ -972,10 +962,6 @@ packages:
     dependencies:
       isexe: 2.0.0
     dev: true
-
-  /winwheel/1.0.1:
-    resolution: {integrity: sha512-w533E3eWFedDBrsVcuZUFJYZAaS1+J/NeaSgyUvp+7wcBBL7QUn2caRb+eZe0UJGbwXV3vBn6osxeliQA//fjA==}
-    dev: false
 
   /word-wrap/1.2.3:
     resolution: {integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==}

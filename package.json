@@ -6,10 +6,6 @@
   "bugs": {
     "url": "https://github.com/SturmB/iel-prize-wheel/issues"
   },
-  "dependencies": {
-    "gsap": "^3.10.4",
-    "winwheel": "^1.0.1"
-  },
   "devDependencies": {
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
