@@ -25,16 +25,22 @@
     <script src="/js/vendor/javascript-winwheel-2.8.0/Winwheel.min.js"></script>
   </head>
 
-  <body class="text-center">
+  <body class="font-body text-center">
     <!-- Add your site or application content here -->
-    <div class="mx-auto p-4">
-      <h1 class="text-xl p-4">Wheel of Destiny</h1>
+    <div class="mx-auto m-4">
+      <h1 class="text-6xl font-black m-4">Wheel of Destiny</h1>
 
-      <canvas class="bg-red-300 mx-auto" id="canvas" width="800" height="630">
+      <canvas class="mx-auto" id="canvas" width="800" height="630">
         Canvas not supported, use another browser.
       </canvas>
 
-      <button class="btn" id="spinButton" onclick="spinTheWheel();">Spin</button>
+      <button
+        class="m-4 font-bold uppercase text-xl text-gray-50 bg-blue-700 hover:bg-blue-500 rounded-md px-4 py-2 border border-blue-900"
+        id="spinButton"
+        onclick="spinTheWheel();"
+      >
+        Spin the Wheel
+      </button>
     </div>
 
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
