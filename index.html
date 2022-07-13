@@ -27,28 +27,37 @@
 
   <body class="font-body text-center">
     <!-- Add your site or application content here -->
-    <div class="mx-auto m-4">
+    <div class="mx-auto m-4 px-12">
       <h1 class="text-6xl font-black">Wheel of Destiny</h1>
 
-      <div class="flex flex-wrap items-center">
+      <div class="flex flex-wrap relative">
+        <button
+          class="absolute z-10 top-4 inset-x-1/2 min-w-fit font-bold uppercase text-xl text-gray-50 bg-blue-700 hover:bg-blue-500 rounded-md px-4 py-2 border border-blue-900 disabled:bg-slate-200 disabled:text-slate-400 disabled:border-slate-300"
+          id="spinButton"
+          onclick="spinTheWheel();"
+          style="transform: translateX(-50%)"
+        >
+          Spin the Wheel
+        </button>
+
         <div
           class="flex mx-auto bg-[url('/img/IEL-PrizeWheel-01.png')] bg-center relative"
           style="height: 820px; width: 630px"
         >
-          <button
-            class="absolute top-4 inset-x-1/2 min-w-fit font-bold uppercase text-xl text-gray-50 bg-blue-700 hover:bg-blue-500 rounded-md px-4 py-2 border border-blue-900"
-            id="spinButton"
-            onclick="spinTheWheel();"
-            style="transform: translateX(-50%);"
-          >
-            Spin the Wheel
-          </button>
+          <img
+            src="/img/IEL-PrizeWheel-Pointer-01.png"
+            alt="Pointer"
+            class="absolute z-10 top-16 inset-x-1/2"
+            style="transform: translateX(-50%)"
+          />
           <canvas class="m-auto" id="canvas" width="630" height="630">
             Canvas not supported, use another browser.
           </canvas>
         </div>
 
-        <div>
+        <div id="history" class="mt-6 hidden">
+          <h2 class="text-4xl font-bold">Previous<br />Spin Results</h2>
+          <div id="spinResults"></div>
         </div>
       </div>
     </div>

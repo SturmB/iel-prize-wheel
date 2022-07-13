@@ -32,23 +32,59 @@ const strokeColor = "#4c005d";
 const levels = [
   {
     bgColor: level1Gradient,
+    color: "#007894",
     percent: 75,
     textColor: "#FFFFFF",
   },
   {
     bgColor: level2Gradient,
+    color: "#8f00af",
     percent: 25,
     textColor: "#FFFFFF",
   },
 ];
 
+const titleCase = (str) => {
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map((word) => {
+      return word.replace(word[0], word[0].toUpperCase());
+    })
+    .join(" ");
+};
+
 const audio = new Audio("/js/vendor/javascript-winwheel-2.8.0/tick.mp3");
+const spinButton = document.getElementById("spinButton");
+const historyElement = document.getElementById("history");
+const resultsElement = document.getElementById("spinResults");
 
 const playSound = () => {
   audio.pause();
   audio.currentTime = 0;
-
   audio.play();
+};
+
+const alertPrize = () => {
+  const winningSegment = theWheel.getIndicatedSegment();
+  const winningText = titleCase(winningSegment.text.replaceAll("\n", " "));
+  const winningColor = levels[parseInt(winningText.slice(-1))-1].color;
+
+  historyElement.classList.remove("hidden");
+  const paragraph = document.createElement("p");
+  const text = document.createTextNode(winningText);
+  paragraph.classList.add(
+    "border",
+    "border-gray-400",
+    "my-2",
+    "py-1",
+    "rounded",
+    "text-lg",
+    "text-white"
+  );
+  paragraph.style.backgroundColor = winningColor;
+  paragraph.append(text);
+  resultsElement.prepend(paragraph);
 };
 
 let highestLevelSize = 0;
@@ -73,6 +109,7 @@ for (let i = 0; i < numWedgesPerLevel; i++) {
 
 const theWheel = new Winwheel({
   animation: {
+    callbackFinished: alertPrize,
     callbackSound: playSound,
     duration: 5,
     soundTrigger: "pin",
@@ -97,7 +134,6 @@ const theWheel = new Winwheel({
 
 // eslint-disable-next-line no-unused-vars
 const spinTheWheel = () => {
-  const spinButton = document.getElementById("spinButton");
   theWheel.rotationAngle = 9;
   theWheel.draw();
   theWheel.startAnimation();
