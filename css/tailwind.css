@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Nunito:wght@400;500;700;900&display=swap');
 
 /*
 ! tailwindcss v3.1.6 | MIT License | https://tailwindcss.com
@@ -560,8 +560,29 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.absolute{
+  position: absolute;
+}
+
+.relative{
+  position: relative;
+}
+
+.inset-x-1\/2{
+  left: 50%;
+  right: 50%;
+}
+
+.top-4{
+  top: 1rem;
+}
+
 .m-4{
   margin: 1rem;
+}
+
+.m-auto{
+  margin: auto;
 }
 
 .mx-auto{
@@ -569,16 +590,26 @@ video {
   margin-right: auto;
 }
 
-.mb-0{
-  margin-bottom: 0px;
+.flex{
+  display: flex;
 }
 
-.h-96{
-  height: 24rem;
+.min-w-fit{
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
 
-.w-96{
-  width: 24rem;
+.transform{
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.items-center{
+  align-items: center;
 }
 
 .rounded-md{
@@ -597,10 +628,6 @@ video {
 .bg-blue-700{
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
-}
-
-.bg-\[url\(\'img\/IEL-PrizeWheel-01\.png\'\)\]{
-  background-image: url('img/IEL-PrizeWheel-01.png');
 }
 
 .bg-\[url\(\'\/img\/IEL-PrizeWheel-01\.png\'\)\]{

@@ -3,25 +3,24 @@
 // Define gradients (optional)
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-const canvasHCenter = canvas.width / 2;
-const canvasVCenter = canvas.height / 2;
+const canvasCenter = canvas.width / 2;
 
 const level1Gradient = ctx.createRadialGradient(
-  canvasHCenter,
-  canvasVCenter,
+  canvasCenter,
+  canvasCenter,
   50,
-  canvasHCenter,
-  canvasVCenter,
+  canvasCenter,
+  canvasCenter,
   250
 );
 level1Gradient.addColorStop(0, "#00d4ff");
 level1Gradient.addColorStop(1, "#007894");
 const level2Gradient = ctx.createRadialGradient(
-  canvasHCenter,
-  canvasVCenter,
+  canvasCenter,
+  canvasCenter,
   50,
-  canvasHCenter,
-  canvasVCenter,
+  canvasCenter,
+  canvasCenter,
   250
 );
 level2Gradient.addColorStop(0, "#d000ff");
@@ -63,8 +62,9 @@ const segments = levels.map((level, index) => {
       )),
     }),
     strokeStyle: strokeColor,
-    text: `LEVEL\n${index + 1}`,
+    text: `PRIZE\nLEVEL\n${index + 1}`,
     textFillStyle: level.textColor,
+    textFontFamily: "'Nova Mono'",
   };
 });
 for (let i = 0; i < numWedgesPerLevel; i++) {
