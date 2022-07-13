@@ -68,7 +68,7 @@ const playSound = () => {
 const alertPrize = () => {
   const winningSegment = theWheel.getIndicatedSegment();
   const winningText = titleCase(winningSegment.text.replaceAll("\n", " "));
-  const winningColor = levels[parseInt(winningText.slice(-1))-1].color;
+  const winningColor = levels[parseInt(winningText.slice(-1)) - 1].color;
 
   historyElement.classList.remove("hidden");
   const paragraph = document.createElement("p");
@@ -85,6 +85,14 @@ const alertPrize = () => {
   paragraph.style.backgroundColor = winningColor;
   paragraph.append(text);
   resultsElement.prepend(paragraph);
+
+  Swal.fire({
+    title: "Congratulations!",
+    text: `You have won a ${winningText}!`,
+    icon: "success",
+    confirmButtonText: "Sweet!",
+    allowClickOutside: false,
+  });
 };
 
 let highestLevelSize = 0;
