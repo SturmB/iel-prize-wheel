@@ -3,24 +3,25 @@
 // Define gradients (optional)
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-const canvasCenter = canvas.height / 2;
+const canvasHCenter = canvas.width / 2;
+const canvasVCenter = canvas.height / 2;
 
 const level1Gradient = ctx.createRadialGradient(
-  canvasCenter,
-  canvasCenter,
+  canvasHCenter,
+  canvasVCenter,
   50,
-  canvasCenter,
-  canvasCenter,
+  canvasHCenter,
+  canvasVCenter,
   250
 );
 level1Gradient.addColorStop(0, "#00d4ff");
 level1Gradient.addColorStop(1, "#007894");
 const level2Gradient = ctx.createRadialGradient(
-  canvasCenter,
-  canvasCenter,
+  canvasHCenter,
+  canvasVCenter,
   50,
-  canvasCenter,
-  canvasCenter,
+  canvasHCenter,
+  canvasVCenter,
   250
 );
 level2Gradient.addColorStop(0, "#d000ff");
@@ -78,6 +79,7 @@ const theWheel = new Winwheel({
     spins: 4,
     type: "spinToStop",
   },
+  innerRadius: 100,
   lineWidth: 3,
   numSegments: numWedgesPerLevel * levels.length,
   outerRadius: 300,
