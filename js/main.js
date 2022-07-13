@@ -1,5 +1,8 @@
 /* eslint-disable no-undef */
 
+const t2Percent = 25;
+const numWedgesPerTier = 5;
+
 const audio = new Audio("/js/vendor/javascript-winwheel-2.8.0/tick.mp3");
 
 const playSound = () => {
@@ -9,6 +12,20 @@ const playSound = () => {
   audio.play();
 };
 
+const t2Size = winwheelPercentToDegrees(t2Percent / numWedgesPerTier);
+const segmentArray = [];
+for (let i = 0; i < numWedgesPerTier; i++) {
+  segmentArray.push({
+    fillStyle: "#beff5a",
+    text: "Tier 1"
+  });
+  segmentArray.push({
+    fillStyle: "#37ff00",
+    size: t2Size,
+    text: "Tier 2"
+  });
+}
+
 const theWheel = new Winwheel({
   animation: {
     callbackSound: playSound,
@@ -17,7 +34,7 @@ const theWheel = new Winwheel({
     spins: 4,
     type: "spinToStop",
   },
-  numSegments: 10,
+  numSegments: numWedgesPerTier * 2,
   lineWidth: 3,
   outerRadius: 300,
   pins: {
@@ -25,59 +42,8 @@ const theWheel = new Winwheel({
     number: 40,
     outerRadius: 4,
   },
-  rotationAngle: 9,
-  segments: [
-    {
-      fillStyle: "#beff5a",
-      size: winwheelPercentToDegrees(75 / 5),
-      text: "Tier 1",
-    },
-    {
-      fillStyle: "#37ff00",
-      size: winwheelPercentToDegrees(25 / 5),
-      text: "Tier 2",
-    },
-    {
-      fillStyle: "#beff5a",
-      size: winwheelPercentToDegrees(75 / 5),
-      text: "Tier 1",
-    },
-    {
-      fillStyle: "#37ff00",
-      size: winwheelPercentToDegrees(25 / 5),
-      text: "Tier 2",
-    },
-    {
-      fillStyle: "#beff5a",
-      size: winwheelPercentToDegrees(75 / 5),
-      text: "Tier 1",
-    },
-    {
-      fillStyle: "#37ff00",
-      size: winwheelPercentToDegrees(25 / 5),
-      text: "Tier 2",
-    },
-    {
-      fillStyle: "#beff5a",
-      size: winwheelPercentToDegrees(75 / 5),
-      text: "Tier 1",
-    },
-    {
-      fillStyle: "#37ff00",
-      size: winwheelPercentToDegrees(25 / 5),
-      text: "Tier 2",
-    },
-    {
-      fillStyle: "#beff5a",
-      size: winwheelPercentToDegrees(75 / 5),
-      text: "Tier 1",
-    },
-    {
-      fillStyle: "#37ff00",
-      size: winwheelPercentToDegrees(25 / 5),
-      text: "Tier 2",
-    },
-  ],
+  rotationAngle: t2Size / 2,
+  segments: segmentArray,
   textAlignment: "outer",
   textMargin: 50,
   textOrientation: "vertical",
